@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B-SSCOS - Laman Utama</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+<style>
+body{font-family:Poppins,sans-serif;background:#f8fafc}
+/* =========================
+   NAVBAR B-SSCOS
+========================= */
+
+.navbar{
+    padding:12px 0;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(37,99,235,.10);
+    box-shadow:0 6px 25px rgba(15,23,42,.08);
+    transition:all .3s ease;
+}
+
+.navbar .container{
+    position:relative;
+}
+
+/* Logo / jenama */
+
+.navbar-brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    margin-right:25px;
+    color:#1d4ed8 !important;
+    text-decoration:none;
+    transition:transform .3s ease;
+}
+
+.navbar-brand:hover{
+    transform:translateY(-2px);
+}
+
+.brand-mark{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:13px;
+    color:#fff;
+    font-size:21px;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    box-shadow:0 8px 18px rgba(37,99,235,.28);
+    transition:all .3s ease;
+}
+
+.navbar-brand:hover .brand-mark{
+    transform:rotate(-7deg) scale(1.06);
+    box-shadow:0 12px 25px rgba(37,99,235,.38);
+}
+
+.brand-text{
+    display:flex;
+    flex-direction:column;
+    line-height:1.05;
+}
+
+.brand-name{
+    font-size:1.2rem;
+    font-weight:700;
+    letter-spacing:.4px;
+}
+
+.brand-tagline{
+    margin-top:4px;
+    color:#64748b;
+    font-size:.67rem;
+    font-weight:500;
+    letter-spacing:.7px;
+    text-transform:uppercase;
+}
+
+/* Menu */
+
+.navbar-nav{
+    align-items:center;
+    gap:3px;
+}
+
+.navbar .nav-link{
+    position:relative;
+    z-index:1;
+    padding:11px 14px !important;
+    border-radius:10px;
+    color:#334155 !important;
+    font-size:.94rem;
+    font-weight:600;
+    transition:all .3s ease;
+}
+
+.navbar .nav-link i{
+    color:#64748b;
+    transition:all .3s ease;
+}
+
+.navbar .nav-link::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:4px;
+    width:0;
+    height:3px;
+    border-radius:20px;
+    background:linear-gradient(90deg,#2563eb,#4f46e5);
+    transform:translateX(-50%);
+    transition:width .3s ease;
+}
+
+.navbar .nav-link:hover{
+    color:#2563eb !important;
+    background:#eff6ff;
+    transform:translateY(-2px);
+}
+
+.navbar .nav-link:hover i{
+    color:#2563eb;
+    transform:scale(1.12);
+}
+
+.navbar .nav-link:hover::after{
+    width:52%;
+}
+
+.navbar .nav-link.active{
+    color:#1d4ed8 !important;
+    background:#eef2ff;
+}
+
+.navbar .nav-link.active::after{
+    width:52%;
+}
+
+/* Butang login */
+
+#loginButton{
+    position:relative;
+    overflow:hidden;
+    margin-left:10px !important;
+    padding:11px 18px;
+    border:0;
+    border-radius:11px;
+    color:#fff;
+    font-weight:600;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    box-shadow:0 8px 20px rgba(37,99,235,.25);
+    transition:all .3s ease;
+}
+
+#loginButton::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:70%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.38),
+        transparent
+    );
+    transform:skewX(-20deg);
+    transition:left .55s ease;
+}
+
+#loginButton i,
+#loginButton span{
+    position:relative;
+    z-index:1;
+}
+
+#loginButton:hover{
+    color:#fff;
+    transform:translateY(-3px);
+    box-shadow:0 13px 28px rgba(37,99,235,.38);
+}
+
+#loginButton:hover::before{
+    left:145%;
+}
+
+#loginButton:active{
+    transform:translateY(-1px);
+}
+
+/* Toggler */
+
+.navbar-toggler{
+    width:46px;
+    height:42px;
+    padding:0;
+    border:1px solid #dbeafe;
+    border-radius:11px;
+    background:#eff6ff;
+    transition:all .3s ease;
+}
+
+.navbar-toggler:hover{
+    background:#dbeafe;
+    transform:scale(1.04);
+}
+
+.navbar-toggler:focus{
+    box-shadow:0 0 0 4px rgba(37,99,235,.13);
+}
+.hero{background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;padding:90px 0}
+.hero img{max-width:100%;border-radius:20px}
+.btn-main{background:#fff;color:#2563eb;font-weight:600}
+.section{padding:70px 0}
+.card{border:0;box-shadow:0 4px 15px rgba(0,0,0,.06)}
+.card:hover{transform:translateY(-8px);transition:.3s}
+.footer{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg,#0f172a 0%,#172554 50%,#1e1b4b 100%);
+    color:#fff;
+    padding:60px 0 0;
+    border-top:5px solid #2563eb;
+}
+.footer::before{
+    content:"";
+    position:absolute;
+    width:280px;
+    height:280px;
+    top:-160px;
+    right:-80px;
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
+}
+.footer::after{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    bottom:-130px;
+    left:-70px;
+    border-radius:50%;
+    background:rgba(255,255,255,.04);
+}
+.footer .container{position:relative;z-index:1}
+.footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.footer-logo{
+    width:54px;
+    height:54px;
+    min-width:54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:15px;
+    background:#fff;
+    color:#2563eb;
+    font-size:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.22);
+    transition:.3s ease;
+}
+.footer-brand:hover .footer-logo{transform:translateY(-5px) rotate(-4deg)}
+.footer-brand h3{margin:0;font-weight:700;letter-spacing:.5px}
+.footer-brand small,.footer-description{color:#cbd5e1}
+.footer-description{line-height:1.8;margin-bottom:0}
+.footer-title{
+    position:relative;
+    display:inline-block;
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:22px;
+    padding-bottom:10px;
+}
+.footer-title::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:38px;
+    height:3px;
+    border-radius:10px;
+    background:#60a5fa;
+    transition:.3s ease;
+}
+.footer-column:hover .footer-title::after{width:65px;background:#fff}
+.footer-links{list-style:none;padding:0;margin:0}
+.footer-links li{margin-bottom:11px}
+.footer-links a{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    color:#cbd5e1;
+    text-decoration:none;
+    transition:.3s ease;
+}
+.footer-links a i{font-size:11px;color:#60a5fa;transition:.3s ease}
+.footer-links a:hover{color:#fff;transform:translateX(7px)}
+.footer-links a:hover i{color:#fff}
+.footer-contact{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    margin-bottom:15px;
+    color:#cbd5e1;
+}
+.footer-contact-icon{
+    width:40px;
+    height:40px;
+    min-width:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:11px;
+    background:rgba(255,255,255,.1);
+    color:#93c5fd;
+    transition:.3s ease;
+}
+.footer-contact:hover .footer-contact-icon{
+    background:#fff;
+    color:#2563eb;
+    transform:translateY(-4px);
+}
+.footer-contact a{color:#cbd5e1;text-decoration:none;transition:.3s ease}
+.footer-contact a:hover{color:#fff}
+.footer-social{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.footer-social a{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:50%;
+    color:#fff;
+    font-size:18px;
+    text-decoration:none;
+    transition:.3s ease;
+}
+.footer-social a:hover{
+    background:#fff;
+    color:#2563eb;
+    border-color:#fff;
+    transform:translateY(-6px);
+    box-shadow:0 10px 22px rgba(0,0,0,.25);
+}
+.footer-whatsapp{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:6px;
+    padding:11px 18px;
+    border-radius:9px;
+    background:#22c55e;
+    color:#fff;
+    font-weight:600;
+    text-decoration:none;
+    transition:.3s ease;
+}
+.footer-whatsapp:hover{
+    color:#fff;
+    background:#16a34a;
+    transform:translateY(-4px);
+    box-shadow:0 10px 24px rgba(34,197,94,.28);
+}
+.footer-bottom{
+    margin-top:45px;
+    padding:19px 0;
+    border-top:1px solid rgba(255,255,255,.14);
+    background:rgba(0,0,0,.14);
+}
+.footer-bottom-content{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.footer-bottom p{margin:0;color:#cbd5e1;font-size:14px}
+.footer-bottom-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-bottom-links a{
+    position:relative;
+    color:#cbd5e1;
+    font-size:14px;
+    text-decoration:none;
+    transition:.3s ease;
+}
+.footer-bottom-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-4px;
+    width:0;
+    height:2px;
+    background:#60a5fa;
+    transition:.3s ease;
+}
+.footer-bottom-links a:hover{color:#fff}
+.footer-bottom-links a:hover::after{width:100%}
+.page-title{font-weight:700}
+.table-box{background:#fff;border-radius:15px;box-shadow:0 4px 15px rgba(0,0,0,.06);overflow:hidden}
+.table thead th{background:#eef2ff;color:#1e3a8a}
+.qty-input{max-width:90px}
+.size-select{min-width:150px}
+.summary-box{background:#fff;border-radius:15px;padding:25px;box-shadow:0 4px 15px rgba(0,0,0,.06)}
+.progress{height:12px}
+.low-stock{background:#fee2e2!important}
+.faq-search{max-width:700px;margin:auto}
+.accordion-item{border:0;margin-bottom:12px;box-shadow:0 3px 12px rgba(0,0,0,.06)}
+.login-section{min-height:75vh;display:flex;align-items:center}
+.login-card{max-width:500px;margin:auto;border-radius:20px}
+.notice-box{background:#fff3cd;border-left:5px solid #ffc107;padding:18px;border-radius:10px}
+.status-step{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.status-icon{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#dbeafe;color:#2563eb}
+@media(max-width:768px){
+.hero{padding:70px 0;text-align:center}
+.hero h1{font-size:2.2rem}
+.navbar-collapse{
+    margin-top:14px;
+    padding-top:13px;
+    border-top:1px solid #e2e8f0;
+}
+.navbar-nav{
+    align-items:stretch;
+    gap:5px;
+}
+.navbar .nav-link{
+    width:100%;
+    padding:12px 14px !important;
+}
+.navbar .nav-link::after{
+    left:14px;
+    bottom:5px;
+    transform:none;
+}
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after{
+    width:35px;
+}
+#loginButton{
+    width:100%;
+    margin:8px 0 0 !important;
+    text-align:center;
+}
+.brand-tagline{
+    display:none;
+}
+.footer{padding-top:48px}
+.footer-column{margin-bottom:12px}
+.footer-brand{justify-content:center;text-align:left}
+.footer-description{text-align:center}
+.footer-title{margin-top:8px}
+.footer-bottom-content{flex-direction:column;text-align:center}
+.footer-bottom-links{justify-content:center}
+}
+
+/* =====================================================
+   KESAN PREMIUM HALAMAN UTAMA
+===================================================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    position:relative;
+    overflow-x:hidden;
+    color:#0f172a;
+    background:
+        radial-gradient(circle at 10% 15%,rgba(37,99,235,.08),transparent 26%),
+        radial-gradient(circle at 90% 45%,rgba(79,70,229,.07),transparent 25%),
+        #f8fafc;
+}
+
+body::selection{
+    color:#fff;
+    background:#2563eb;
+}
+
+::-webkit-scrollbar{
+    width:11px;
+}
+
+::-webkit-scrollbar-track{
+    background:#eaf0f8;
+}
+
+::-webkit-scrollbar-thumb{
+    border:3px solid #eaf0f8;
+    border-radius:30px;
+    background:linear-gradient(#2563eb,#4f46e5);
+}
+
+/* Navbar berubah ketika skrol */
+
+.navbar.navbar-scrolled{
+    padding:7px 0;
+    background:rgba(255,255,255,.88);
+    box-shadow:0 14px 36px rgba(15,23,42,.13);
+}
+
+/* HERO */
+
+.hero{
+    position:relative;
+    isolation:isolate;
+    min-height:620px;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    padding:105px 0;
+    background:
+        radial-gradient(circle at 20% 25%,rgba(255,255,255,.18),transparent 22%),
+        radial-gradient(circle at 84% 20%,rgba(96,165,250,.34),transparent 22%),
+        linear-gradient(-45deg,#1d4ed8,#4f46e5,#2563eb,#0f52ba);
+    background-size:300% 300%;
+    animation:heroGradient 12s ease infinite;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-2;
+    opacity:.17;
+    background-image:
+        linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px);
+    background-size:48px 48px;
+    mask-image:linear-gradient(to bottom,#000,transparent 90%);
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    left:-15%;
+    right:-15%;
+    bottom:-145px;
+    height:230px;
+    z-index:-1;
+    border-radius:50% 50% 0 0;
+    background:#f8fafc;
+}
+
+@keyframes heroGradient{
+    0%,100%{background-position:0 50%}
+    50%{background-position:100% 50%}
+}
+
+.hero-orb{
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+    filter:blur(2px);
+    animation:orbFloat 8s ease-in-out infinite;
+}
+
+.hero-orb.one{
+    width:150px;
+    height:150px;
+    top:70px;
+    left:-55px;
+    background:rgba(255,255,255,.12);
+}
+
+.hero-orb.two{
+    width:95px;
+    height:95px;
+    right:8%;
+    top:85px;
+    background:rgba(255,255,255,.16);
+    animation-delay:-2s;
+}
+
+.hero-orb.three{
+    width:210px;
+    height:210px;
+    right:-90px;
+    bottom:35px;
+    background:rgba(129,140,248,.26);
+    animation-delay:-4s;
+}
+
+@keyframes orbFloat{
+    0%,100%{transform:translate3d(0,0,0) scale(1)}
+    50%{transform:translate3d(0,-24px,0) scale(1.08)}
+}
+
+.hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    margin-bottom:20px;
+    padding:9px 15px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:30px;
+    background:rgba(255,255,255,.13);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.18);
+    backdrop-filter:blur(10px);
+    font-size:.88rem;
+    font-weight:600;
+}
+
+.hero-badge i{
+    color:#fde68a;
+    animation:pulseIcon 1.8s infinite;
+}
+
+@keyframes pulseIcon{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.22)}
+}
+
+.hero-title{
+    margin-bottom:18px;
+    font-size:clamp(3.3rem,7vw,6.3rem);
+    line-height:.92;
+    letter-spacing:-4px;
+    text-shadow:0 14px 38px rgba(15,23,42,.25);
+}
+
+.hero-title span{
+    display:block;
+    color:#dbeafe;
+    font-size:.29em;
+    line-height:1.4;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.hero-copy{
+    max-width:620px;
+    margin-bottom:28px;
+    color:#e0e7ff;
+    font-size:1.08rem;
+    line-height:1.8;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+}
+
+.btn-main,
+.hero-outline{
+    position:relative;
+    overflow:hidden;
+    min-width:165px;
+    padding:13px 21px;
+    border-radius:13px;
+    transition:.35s ease;
+}
+
+.btn-main{
+    border:0;
+    background:#fff;
+    color:#1d4ed8;
+    box-shadow:0 13px 30px rgba(15,23,42,.18);
+}
+
+.btn-main:hover{
+    color:#1d4ed8;
+    transform:translateY(-5px) scale(1.025);
+    box-shadow:0 18px 36px rgba(15,23,42,.25);
+}
+
+.hero-outline{
+    border:1px solid rgba(255,255,255,.5);
+    background:rgba(255,255,255,.09);
+    color:#fff;
+    backdrop-filter:blur(10px);
+}
+
+.hero-outline:hover{
+    border-color:#fff;
+    background:#fff;
+    color:#1d4ed8;
+    transform:translateY(-5px);
+}
+
+.hero-visual{
+    position:relative;
+    padding:22px;
+    perspective:1100px;
+}
+
+.hero-image-frame{
+    position:relative;
+    z-index:2;
+    padding:10px;
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:29px;
+    background:rgba(255,255,255,.12);
+    box-shadow:0 30px 75px rgba(15,23,42,.34);
+    backdrop-filter:blur(12px);
+    animation:imageFloat 5.5s ease-in-out infinite;
+}
+
+.hero-image-frame::before{
+    content:"";
+    position:absolute;
+    inset:-12px;
+    z-index:-1;
+    border-radius:36px;
+    background:linear-gradient(135deg,rgba(255,255,255,.36),rgba(96,165,250,.02));
+    filter:blur(16px);
+}
+
+.hero-image-frame img{
+    width:100%;
+    min-height:365px;
+    max-height:440px;
+    object-fit:cover;
+    border-radius:21px;
+    transition:transform .6s ease,filter .6s ease;
+}
+
+.hero-image-frame:hover img{
+    transform:scale(1.035);
+    filter:saturate(1.1) contrast(1.04);
+}
+
+@keyframes imageFloat{
+    0%,100%{transform:translateY(0) rotateY(-2deg)}
+    50%{transform:translateY(-14px) rotateY(2deg)}
+}
+
+.floating-info{
+    position:absolute;
+    z-index:4;
+    display:flex;
+    align-items:center;
+    gap:11px;
+    padding:12px 15px;
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:15px;
+    color:#0f172a;
+    background:rgba(255,255,255,.93);
+    box-shadow:0 15px 35px rgba(15,23,42,.25);
+    backdrop-filter:blur(12px);
+    animation:smallFloat 4s ease-in-out infinite;
+}
+
+.floating-info i{
+    width:39px;
+    height:39px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:11px;
+    color:#fff;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+}
+
+.floating-info strong{
+    display:block;
+    font-size:.88rem;
+}
+
+.floating-info small{
+    color:#64748b;
+    font-size:.72rem;
+}
+
+.floating-info.info-one{
+    left:-25px;
+    bottom:65px;
+}
+
+.floating-info.info-two{
+    right:-18px;
+    top:55px;
+    animation-delay:-2s;
+}
+
+@keyframes smallFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-9px)}
+}
+
+/* STATISTIK */
+
+.stats-section{
+    position:relative;
+    z-index:5;
+    margin-top:-70px;
+    padding-bottom:30px;
+}
+
+.stats-panel{
+    overflow:hidden;
+    border:1px solid rgba(37,99,235,.12);
+    border-radius:22px;
+    background:rgba(255,255,255,.92);
+    box-shadow:0 22px 60px rgba(15,23,42,.14);
+    backdrop-filter:blur(18px);
+}
+
+.stat-item{
+    position:relative;
+    padding:27px 20px;
+    text-align:center;
+}
+
+.stat-item:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    top:22%;
+    right:0;
+    width:1px;
+    height:56%;
+    background:#dbeafe;
+}
+
+.stat-icon{
+    width:46px;
+    height:46px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 10px;
+    border-radius:14px;
+    color:#fff;
+    font-size:20px;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    box-shadow:0 9px 20px rgba(37,99,235,.25);
+    transition:.35s ease;
+}
+
+.stat-item:hover .stat-icon{
+    transform:translateY(-6px) rotate(-5deg);
+}
+
+.stat-number{
+    display:block;
+    color:#172554;
+    font-size:1.75rem;
+    font-weight:700;
+}
+
+.stat-label{
+    color:#64748b;
+    font-size:.87rem;
+}
+
+/* SECTION */
+
+.section{
+    position:relative;
+    padding:88px 0;
+}
+
+.section > .container{
+    position:relative;
+    z-index:2;
+}
+
+.section h2{
+    position:relative;
+    width:max-content;
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom:16px;
+    color:#0f172a;
+    letter-spacing:-1px;
+}
+
+.section h2::before{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:0;
+    width:70px;
+    height:4px;
+    border-radius:20px;
+    background:linear-gradient(90deg,#2563eb,#4f46e5);
+    transform:translateX(-50%);
+}
+
+.section h2::after{
+    content:"";
+    position:absolute;
+    left:calc(50% + 43px);
+    bottom:0;
+    width:8px;
+    height:4px;
+    border-radius:20px;
+    background:#93c5fd;
+}
+
+.bg-light{
+    background:
+        radial-gradient(circle at 7% 20%,rgba(37,99,235,.06),transparent 24%),
+        #f1f5f9 !important;
+}
+
+/* Maklumat penting */
+
+.notice-box{
+    position:relative;
+    overflow:hidden;
+    padding:25px 28px;
+    border:1px solid #fde68a;
+    border-left:6px solid #f59e0b;
+    border-radius:18px;
+    background:linear-gradient(135deg,#fffbeb,#fff7d6);
+    box-shadow:0 15px 35px rgba(245,158,11,.11);
+}
+
+.notice-box::after{
+    content:"\F18A";
+    position:absolute;
+    right:18px;
+    top:50%;
+    color:rgba(245,158,11,.1);
+    font-family:"bootstrap-icons";
+    font-size:75px;
+    transform:translateY(-50%) rotate(-8deg);
+}
+
+/* Kad premium */
+
+.card{
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(37,99,235,.08);
+    border-radius:19px;
+    background:rgba(255,255,255,.96);
+    box-shadow:0 10px 30px rgba(15,23,42,.075);
+    transform-style:preserve-3d;
+    transition:
+        transform .38s cubic-bezier(.2,.8,.2,1),
+        box-shadow .38s ease,
+        border-color .38s ease;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(90deg,#2563eb,#4f46e5,#60a5fa);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .42s ease;
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    top:-120%;
+    left:-60%;
+    width:55%;
+    height:300%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);
+    transform:rotate(20deg);
+    transition:left .7s ease;
+    pointer-events:none;
+}
+
+.card:hover{
+    border-color:rgba(37,99,235,.25);
+    transform:translateY(-13px);
+    box-shadow:0 25px 55px rgba(37,99,235,.16);
+}
+
+.card:hover::before{
+    transform:scaleX(1);
+}
+
+.card:hover::after{
+    left:140%;
+}
+
+.card > i,
+.card .fs-1{
+    position:relative;
+    z-index:1;
+    display:inline-block;
+    transition:transform .4s ease,filter .4s ease;
+}
+
+.card:hover > i,
+.card:hover .fs-1{
+    transform:translateY(-5px) scale(1.13) rotate(-4deg);
+    filter:drop-shadow(0 8px 11px rgba(37,99,235,.25));
+}
+
+.card .btn{
+    position:relative;
+    z-index:2;
+    overflow:hidden;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s ease;
+}
+
+.card .btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 22px rgba(37,99,235,.25);
+}
+
+/* Set Permulaan */
+
+.starter-card{
+    min-height:285px;
+    justify-content:center;
+}
+
+.starter-card .form-number{
+    width:70px;
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 18px;
+    border-radius:22px;
+    color:#fff;
+    font-size:2rem;
+    font-weight:700;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    box-shadow:0 13px 26px rgba(37,99,235,.25);
+    transition:.4s ease;
+}
+
+.starter-card:hover .form-number{
+    transform:translateY(-7px) rotate(-7deg) scale(1.08);
+}
+
+/* Berita */
+
+.news-card small{
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:20px;
+    background:#eff6ff;
+    font-weight:600;
+}
+
+.news-card h5{
+    line-height:1.45;
+}
+
+/* Ulasan */
+
+.review-card{
+    padding-top:55px !important;
+}
+
+.review-card .quote-mark{
+    position:absolute;
+    top:15px;
+    right:20px;
+    color:#dbeafe;
+    font-size:4.4rem;
+    line-height:1;
+}
+
+.review-author{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    margin-top:auto;
+    padding-top:15px;
+}
+
+.review-avatar{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    color:#fff;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+}
+
+/* Peta */
+
+.map-shell{
+    position:relative;
+    padding:9px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    box-shadow:0 22px 55px rgba(37,99,235,.18);
+}
+
+.map-shell iframe{
+    border-radius:18px !important;
+}
+
+/* Hubungan */
+
+.contact-power{
+    position:relative;
+    overflow:hidden;
+    border-radius:28px;
+    color:#fff;
+    background:
+        radial-gradient(circle at 15% 10%,rgba(255,255,255,.15),transparent 23%),
+        linear-gradient(135deg,#172554,#1d4ed8,#4f46e5);
+    box-shadow:0 25px 65px rgba(30,64,175,.25);
+}
+
+.contact-power::before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    right:-100px;
+    bottom:-120px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+}
+
+.contact-power h2{
+    color:#fff;
+}
+
+.contact-power h2::before{
+    background:#fff;
+}
+
+.contact-power h2::after{
+    background:#93c5fd;
+}
+
+.contact-power .contact-chip{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin:5px;
+    padding:10px 14px;
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:30px;
+    color:#fff;
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(9px);
+}
+
+/* Reveal */
+
+.reveal{
+    opacity:0;
+    transform:translateY(38px);
+    transition:
+        opacity .75s ease,
+        transform .75s cubic-bezier(.2,.75,.2,1);
+}
+
+.reveal.reveal-visible{
+    opacity:1;
+    transform:none;
+}
+
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+.reveal-delay-4{transition-delay:.4s}
+
+/* Ripple */
+
+.ripple-btn{
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+}
+
+.ripple-wave{
+    position:absolute;
+    border-radius:50%;
+    pointer-events:none;
+    background:rgba(255,255,255,.46);
+    transform:scale(0);
+    animation:rippleEffect .65s linear;
+}
+
+@keyframes rippleEffect{
+    to{
+        opacity:0;
+        transform:scale(4);
+    }
+}
+
+/* Cursor glow desktop */
+
+.cursor-glow{
+    position:fixed;
+    z-index:9998;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    pointer-events:none;
+    opacity:0;
+    background:radial-gradient(circle,rgba(37,99,235,.105),transparent 67%);
+    transform:translate(-50%,-50%);
+    transition:opacity .25s ease;
+}
+
+/* Back to top */
+
+.back-to-top{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:1050;
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:0;
+    border-radius:14px;
+    color:#fff;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    box-shadow:0 12px 28px rgba(37,99,235,.35);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(15px);
+    transition:.3s ease;
+}
+
+.back-to-top.show{
+    opacity:1;
+    visibility:visible;
+    transform:none;
+}
+
+.back-to-top:hover{
+    transform:translateY(-5px);
+    box-shadow:0 17px 35px rgba(37,99,235,.43);
+}
+
+/* Aksesibiliti */
+
+@media(prefers-reduced-motion:reduce){
+    *,
+    *::before,
+    *::after{
+        scroll-behavior:auto !important;
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+}
+
+@media(max-width:991px){
+    .hero{
+        min-height:auto;
+        padding:85px 0 130px;
+        text-align:center;
+    }
+
+    .hero-copy{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-actions{
+        justify-content:center;
+    }
+
+    .hero-image-frame{
+        max-width:610px;
+        margin:38px auto 0;
+    }
+
+    .floating-info.info-one{
+        left:0;
+    }
+
+    .floating-info.info-two{
+        right:0;
+    }
+
+    .stats-section{
+        margin-top:-58px;
+    }
+
+    .stat-item:nth-child(2)::after{
+        display:none;
+    }
+}
+
+@media(max-width:767px){
+    .hero{
+        padding:72px 0 115px;
+    }
+
+    .hero-title{
+        font-size:3.65rem !important;
+        letter-spacing:-2px;
+    }
+
+    .hero-title span{
+        font-size:.23em;
+        letter-spacing:2px;
+    }
+
+    .hero-image-frame img{
+        min-height:250px;
+    }
+
+    .floating-info{
+        display:none;
+    }
+
+    .stats-panel{
+        border-radius:18px;
+    }
+
+    .stat-item{
+        padding:21px 12px;
+    }
+
+    .stat-item::after{
+        display:none !important;
+    }
+
+    .section{
+        padding:72px 0;
+    }
+
+    .cursor-glow{
+        display:none;
+    }
+
+    .contact-power{
+        border-radius:20px;
+    }
+}
+
+</style>
+
+<link rel="stylesheet" href="bsscos-ui.css">
+<link rel="stylesheet" href="bsscos-chatbot.css">
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
+
+<a class="navbar-brand" href="index.html">
+<span class="brand-mark">
+<i class="bi bi-bag-check-fill"></i>
+</span>
+<span class="brand-text">
+<span class="brand-name">B-SSCOS</span>
+<small class="brand-tagline">Koperasi Digital Bukharian</small>
+</span>
+</a>
+
+<button class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#nav"
+        aria-controls="nav"
+        aria-expanded="false"
+        aria-label="Buka navigasi">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="nav">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link active" href="index.html">
+<i class="bi bi-house-door me-1"></i>
+Laman Utama
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="order.html">
+<i class="bi bi-cart3 me-1"></i>
+Pesanan
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="stock.html">
+<i class="bi bi-boxes me-1"></i>
+Stok
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link" href="faq.html">
+<i class="bi bi-question-circle me-1"></i>
+Soalan Lazim & Aduan
+</a>
+</li>
+
+<li class="nav-item">
+<a class="btn btn-primary"
+   href="login.html"
+   id="loginButton">
+<i class="bi bi-person-circle me-1"></i>
+Log Masuk / Daftar
+</a>
+</li>
+
+</ul>
+
+</div>
+</div>
+</nav>
+
+
+
+<section class="hero">
+<div class="hero-orb one"></div>
+<div class="hero-orb two"></div>
+<div class="hero-orb three"></div>
+
+<div class="container">
+<div class="row align-items-center g-5">
+
+<div class="col-lg-6">
+<div class="hero-badge">
+<i class="bi bi-stars"></i>
+Sistem Koperasi Digital Sekolah
+</div>
+
+<h1 class="hero-title fw-bold">
+B-SSCOS
+<span>Bukharians Beat The Limit</span>
+</h1>
+
+<p class="hero-copy">
+Tempah barangan koperasi, semak stok, buat pembayaran dan pantau
+status pesanan melalui satu platform yang pantas, mudah dan teratur.
+</p>
+
+<div class="hero-actions">
+<a href="order.html" class="btn btn-main btn-lg ripple-btn">
+<i class="bi bi-cart-check-fill me-2"></i>
+Pesan Sekarang
+</a>
+
+<a href="#about" class="btn hero-outline btn-lg ripple-btn">
+<i class="bi bi-play-circle me-2"></i>
+Terokai Sistem
+</a>
+</div>
+</div>
+
+<div class="col-lg-6">
+<div class="hero-visual">
+<div class="hero-image-frame">
+<img src="assets/herosek.jpg" alt="Pelajar B-SSCOS">
+</div>
+
+<div class="floating-info info-one">
+<i class="bi bi-shield-check"></i>
+<div>
+<strong>Tempahan Teratur</strong>
+<small>Satu sistem, satu rekod</small>
+</div>
+</div>
+
+<div class="floating-info info-two">
+<i class="bi bi-lightning-charge-fill"></i>
+<div>
+<strong>Akses Lebih Pantas</strong>
+<small>Semak dan pesan dalam talian</small>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="stats-section">
+<div class="container">
+<div class="stats-panel">
+<div class="row g-0">
+
+<div class="col-6 col-lg-3 stat-item">
+<div class="stat-icon"><i class="bi bi-mortarboard-fill"></i></div>
+<span class="stat-number"><span class="counter" data-target="5">0</span></span>
+<span class="stat-label">Pilihan Tingkatan</span>
+</div>
+
+<div class="col-6 col-lg-3 stat-item">
+<div class="stat-icon"><i class="bi bi-credit-card-2-front-fill"></i></div>
+<span class="stat-number"><span class="counter" data-target="1">0</span> Bayaran</span>
+<span class="stat-label">Gabungan Semua Pesanan</span>
+</div>
+
+<div class="col-6 col-lg-3 stat-item">
+<div class="stat-icon"><i class="bi bi-clock-history"></i></div>
+<span class="stat-number"><span class="counter" data-target="24">0</span>/7</span>
+<span class="stat-label">Akses Sistem</span>
+</div>
+
+<div class="col-6 col-lg-3 stat-item">
+<div class="stat-icon"><i class="bi bi-box-seam-fill"></i></div>
+<span class="stat-number"><span class="counter" data-target="2">0</span> Hari</span>
+<span class="stat-label">Penyediaan Pesanan</span>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+
+<section class="section pt-4">
+<div class="container">
+<div class="notice-box">
+<h5 class="fw-bold"><i class="bi bi-megaphone-fill me-2"></i>Maklumat Penting Pesanan</h5>
+<p class="mb-0">Semua pesanan yang disahkan akan disediakan dalam tempoh <strong>2 hari bekerja</strong> selepas pembayaran berjaya disahkan.</p>
+</div>
+</div>
+</section>
+
+<section class="section" id="about">
+<div class="container text-center">
+<span class="badge rounded-pill text-bg-primary px-3 py-2 mb-3">
+<i class="bi bi-grid-1x2-fill me-1"></i>
+Semua Dalam Satu Platform
+</span>
+<h2 class="fw-bold mb-4">Selamat Datang ke B-SSCOS</h2>
+<p class="text-muted mx-auto fs-5" style="max-width:900px;line-height:1.9">
+B-SSCOS membantu pelajar dan ibu bapa menempah barangan koperasi
+secara dalam talian, menyemak ketersediaan stok, membuat pembayaran QR,
+memuat naik resit dan memantau perkembangan pesanan dengan lebih tersusun.
+</p>
+</div>
+</section>
+
+<section class="section bg-light">
+<div class="container text-center">
+<h2 class="fw-bold mb-5">Cara Sistem Berfungsi</h2>
+<div class="row g-4">
+<div class="col-md-3"><div class="card p-4 h-100"><i class="bi bi-list-check fs-1 text-primary"></i><h5>Pilih Barangan</h5><p class="text-muted">Pilih barangan sekolah yang diperlukan.</p></div></div>
+<div class="col-md-3"><div class="card p-4 h-100"><i class="bi bi-bag-check fs-1 text-primary"></i><h5>Pilih Kuantiti & Saiz</h5><p class="text-muted">Pilih kuantiti dan saiz bagi barangan yang berkaitan.</p></div></div>
+<div class="col-md-3"><div class="card p-4 h-100"><i class="bi bi-qr-code-scan fs-1 text-primary"></i><h5>Pembayaran QR</h5><p class="text-muted">Buat pembayaran dan muat naik resit.</p></div></div>
+<div class="col-md-3"><div class="card p-4 h-100"><i class="bi bi-box-seam fs-1 text-primary"></i><h5>Ambil Barangan</h5><p class="text-muted">Ambil barangan apabila status menjadi Sedia untuk Diambil.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="text-center fw-bold mb-5">Visi, Misi & Objektif</h2>
+<div class="row g-4">
+<div class="col-md-4"><div class="card p-4 h-100 text-center"><i class="bi bi-eye fs-1 text-primary"></i><h4>Visi</h4><p>Menyediakan platform digital yang cekap untuk perkhidmatan koperasi sekolah.</p></div></div>
+<div class="col-md-4"><div class="card p-4 h-100 text-center"><i class="bi bi-bullseye fs-1 text-primary"></i><h4>Misi</h4><p>Memudahkan tempahan barangan sekolah dan meningkatkan pengurusan stok.</p></div></div>
+<div class="col-md-4"><div class="card p-4 h-100 text-center"><i class="bi bi-check2-circle fs-1 text-primary"></i><h4>Objektif</h4><p>Mengurangkan masa menunggu serta memudahkan akses kepada maklumat produk dan stok.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="section bg-light">
+<div class="container">
+<h2 class="text-center fw-bold mb-5">Pautan Pantas</h2>
+<div class="row g-4">
+<div class="col-md-4"><div class="card p-4 text-center h-100"><i class="bi bi-cart4 fs-1 text-primary"></i><h4>Pesanan</h4><p>Tempah barangan sekolah secara dalam talian.</p><a href="order.html" class="btn btn-primary">Pesan Sekarang</a></div></div>
+<div class="col-md-4"><div class="card p-4 text-center h-100"><i class="bi bi-boxes fs-1 text-primary"></i><h4>Stok</h4><p>Semak ketersediaan stok mengikut saiz.</p><a href="stock.html" class="btn btn-primary">Semak Stok</a></div></div>
+<div class="col-md-4"><div class="card p-4 text-center h-100"><i class="bi bi-question-circle fs-1 text-primary"></i><h4>Soalan Lazim</h4><p>Dapatkan jawapan dan hantar aduan.</p><a href="faq.html" class="btn btn-primary">Lihat Soalan Lazim</a></div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+
+<div class="container">
+
+<h2 class="text-center fw-bold mb-3">
+Set Permulaan
+</h2>
+
+<p class="text-center text-muted mb-5">
+Pilih tingkatan untuk melihat barangan set permulaan yang tersedia.
+</p>
+
+
+<div class="row g-4 justify-content-center">
+
+
+<!-- TINGKATAN 1 -->
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card starter-card p-4 h-100 text-center">
+
+<div class="form-number">1</div>
+
+<h4 class="fw-bold">
+Tingkatan 1
+</h4>
+
+<p class="text-muted">
+Lihat barangan set permulaan untuk pelajar Tingkatan 1.
+</p>
+
+<a href="order.html?form=1"
+   class="btn btn-primary">
+
+Lihat Barangan
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- TINGKATAN 2 -->
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card starter-card p-4 h-100 text-center">
+
+<div class="form-number">2</div>
+
+<h4 class="fw-bold">
+Tingkatan 2
+</h4>
+
+<p class="text-muted">
+Lihat barangan set permulaan untuk pelajar Tingkatan 2.
+</p>
+
+<a href="order.html?form=2"
+   class="btn btn-primary">
+
+Lihat Barangan
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- TINGKATAN 3 -->
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card starter-card p-4 h-100 text-center">
+
+<div class="form-number">3</div>
+
+<h4 class="fw-bold">
+Tingkatan 3
+</h4>
+
+<p class="text-muted">
+Lihat barangan set permulaan untuk pelajar Tingkatan 3.
+</p>
+
+<a href="order.html?form=3"
+   class="btn btn-primary">
+
+Lihat Barangan
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- TINGKATAN 4 -->
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card starter-card p-4 h-100 text-center">
+
+<div class="form-number">4</div>
+
+<h4 class="fw-bold">
+Tingkatan 4
+</h4>
+
+<p class="text-muted">
+Lihat barangan set permulaan untuk pelajar Tingkatan 4.
+</p>
+
+<a href="order.html?form=4"
+   class="btn btn-primary">
+
+Lihat Barangan
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- TINGKATAN 5 -->
+
+<div class="col-lg-4 col-md-6">
+
+<div class="card starter-card p-4 h-100 text-center">
+
+<div class="form-number">5</div>
+
+<h4 class="fw-bold">
+Tingkatan 5
+</h4>
+
+<p class="text-muted">
+Lihat barangan set permulaan untuk pelajar Tingkatan 5.
+</p>
+
+<a href="order.html?form=5"
+   class="btn btn-primary">
+
+Lihat Barangan
+
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section bg-light">
+<div class="container">
+<h2 class="text-center fw-bold mb-5">Berita & Pengumuman</h2>
+<div class="row g-4">
+<div class="col-md-4"><div class="card news-card p-4 h-100"><small class="text-primary">1 Januari 2026</small><h5 class="mt-2">Tempahan Dalam Talian Dibuka</h5><p>Tempahan dalam talian B-SSCOS kini dibuka.</p></div></div>
+<div class="col-md-4"><div class="card news-card p-4 h-100"><small class="text-primary">3 Januari 2026</small><h5 class="mt-2">Stok Baharu Pakaian Sukan</h5><p>Stok bagi beberapa saiz pakaian sukan telah ditambah.</p></div></div>
+<div class="col-md-4"><div class="card news-card p-4 h-100"><small class="text-primary">5 Januari 2026</small><h5 class="mt-2">Peringatan Pengambilan</h5><p>Pesanan disediakan dalam tempoh dua hari bekerja selepas pembayaran disahkan.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="section bg-light">
+<div class="container">
+<h2 class="text-center fw-bold mb-5">Ulasan & Kata-Kata</h2>
+<div class="row g-4">
+<div class="col-md-4"><div class="card review-card p-4 h-100"><i class="bi bi-quote quote-mark"></i><p>B-SSCOS menjadikan urusan koperasi sekolah lebih lancar. Pelajar tidak perlu beratur lama dan urusan boleh dilakukan secara dalam talian dengan lebih cepat serta teratur.</p><div class="review-author"><div class="review-avatar"><i class="bi bi-person-fill"></i></div><strong>En. Shamsul Badri</strong></div></div></div>
+<div class="col-md-4"><div class="card review-card p-4 h-100"><i class="bi bi-quote quote-mark"></i><p>Saya boleh menyemak stok sebelum pergi ke sekolah.</p><div class="review-author"><div class="review-avatar"><i class="bi bi-person-fill"></i></div><strong>Ibu Bapa</strong></div></div></div>
+<div class="col-md-4"><div class="card review-card p-4 h-100"><i class="bi bi-quote quote-mark"></i><p>Pesanan lebih mudah disediakan dan diuruskan.</p><div class="review-author"><div class="review-avatar"><i class="bi bi-person-fill"></i></div><strong>Guru Koperasi</strong></div></div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<h2 class="text-center fw-bold mb-5">Lokasi Kami</h2>
+<div class="map-shell">
+<div class="ratio ratio-21x9">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.702479520611!2d100.37447467498961!3d6.137017393849872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b5b34af9a739f%3A0x80da21348bee0ee8!2sSMK%20Syed%20Mohamed%20Al-Bukhary!5e1!3m2!1sen!2smy!4v1785414902315!5m2!1sen!2smy
+" style="border:0;border-radius:20px" allowfullscreen loading="lazy"></iframe>
+</div>
+</div>
+<div class="text-center mt-4"><a href="https://www.google.com/maps" target="_blank" class="btn btn-outline-primary"><i class="bi bi-geo-alt-fill"></i> Dapatkan Arah</a></div>
+</div>
+</section>
+
+
+<section class="section">
+<div class="container">
+<div class="contact-power p-4 p-md-5 text-center">
+<div class="position-relative" style="z-index:2">
+<h2 class="fw-bold mb-4">Hubungan & Platform Dalam Talian</h2>
+<p class="lead mb-4">
+Jika ada sebarang masalah,sila hubungi guru koperasi dan ikuti saluran rasmi sekolah untuk maklumat terkini.
+</p>
+
+<div class="mb-4">
+<span class="contact-chip">
+<i class="bi bi-person-badge-fill"></i>
+Puan Aida Narini
+</span>
+<span class="contact-chip">
+<i class="bi bi-telephone-fill"></i>
+012-3456789
+</span>
+<span class="contact-chip">
+<i class="bi bi-clock-fill"></i>
+Isnin – Jumaat
+</span>
+</div>
+
+<div class="d-flex flex-wrap justify-content-center gap-2">
+<a href="https://wa.me/60123456789" target="_blank" class="btn btn-success btn-lg ripple-btn">
+<i class="bi bi-whatsapp me-2"></i>WhatsApp
+</a>
+<a href="https://web.facebook.com/smk.s.albukhary/?_rdc=1&amp;_rdr" target="_blank" rel="noopener noreferrer" class="btn btn-light btn-lg ripple-btn" aria-label="Facebook">
+<i class="bi bi-facebook text-primary"></i>
+</a>
+<a href="https://www.tiktok.com/@officialsmksmab?_r=1&amp;_t=ZS-98jOzvN8AVQ" target="_blank" rel="noopener noreferrer" class="btn btn-light btn-lg ripple-btn" aria-label="TikTok">
+<i class="bi bi-tiktok text-dark"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<div class="cursor-glow" id="cursorGlow"></div>
+<button class="back-to-top" id="backToTop" aria-label="Kembali ke atas"><i class="bi bi-arrow-up"></i></button>
+
+<footer class="footer">
+<div class="container">
+<div class="row g-5">
+
+<div class="col-lg-5 col-md-12 footer-column">
+<div class="footer-brand">
+<div class="footer-logo"><i class="bi bi-bag-check-fill"></i></div>
+<div>
+<h3>B-SSCOS</h3>
+<small>Sistem Tempahan Koperasi Sekolah Bukharian</small>
+</div>
+</div>
+<p class="footer-description">Platform tempahan digital yang membantu pelajar dan ibu bapa membuat pesanan barangan koperasi, menyemak stok serta memantau status pesanan dengan lebih mudah dan teratur.</p>
+<div class="footer-social">
+<a href="https://web.facebook.com/smk.s.albukhary/?_rdc=1&amp;_rdr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+<a href="https://www.tiktok.com/@officialsmksmab?_r=1&amp;_t=ZS-98jOzvN8AVQ" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok"><i class="bi bi-tiktok"></i></a>
+<a href="mailto:farishaikalyusrizal@gmail.com" aria-label="E-mel" title="E-mel"><i class="bi bi-envelope-fill"></i></a>
+</div>
+</div>
+
+<div class="col-lg-2 col-md-4 footer-column">
+<h5 class="footer-title">Pautan Pantas</h5>
+<ul class="footer-links">
+<li><a href="index.html"><i class="bi bi-chevron-right"></i>Laman Utama</a></li>
+<li><a href="order.html"><i class="bi bi-chevron-right"></i>Pesanan</a></li>
+<li><a href="stock.html"><i class="bi bi-chevron-right"></i>Semakan Stok</a></li>
+<li><a href="faq.html"><i class="bi bi-chevron-right"></i>Soalan Lazim</a></li>
+<li><a href="login.html"><i class="bi bi-chevron-right"></i>Log Masuk / Daftar</a></li>
+</ul>
+</div>
+
+<div class="col-lg-2 col-md-4 footer-column">
+<h5 class="footer-title">Perkhidmatan</h5>
+<ul class="footer-links">
+<li><a href="order.html"><i class="bi bi-chevron-right"></i>Tempahan Barangan</a></li>
+<li><a href="stock.html"><i class="bi bi-chevron-right"></i>Status Stok</a></li>
+<li><a href="order.html#history"><i class="bi bi-chevron-right"></i>Sejarah Pesanan</a></li>
+<li><a href="faq.html"><i class="bi bi-chevron-right"></i>Hantar Aduan</a></li>
+</ul>
+</div>
+
+<div class="col-lg-3 col-md-4 footer-column">
+<h5 class="footer-title">Hubungi Kami</h5>
+<div class="footer-contact">
+<div class="footer-contact-icon"><i class="bi bi-envelope-fill"></i></div>
+<div><small>E-mel</small><br><a href="mailto:coop@school.edu.my">coop@school.edu.my</a></div>
+</div>
+<div class="footer-contact">
+<div class="footer-contact-icon"><i class="bi bi-telephone-fill"></i></div>
+<div><small>Telefon</small><br><a href="tel:041234567">04-1234567</a></div>
+</div>
+<div class="footer-contact">
+<div class="footer-contact-icon"><i class="bi bi-clock-fill"></i></div>
+<div><small>Waktu Operasi</small><br>Isnin – Jumaat<br>8:00 pagi – 4:00 petang</div>
+</div>
+<a href="https://wa.me/60123456789" target="_blank" rel="noopener noreferrer" class="footer-whatsapp"><i class="bi bi-whatsapp"></i>Hubungi WhatsApp</a>
+</div>
+
+</div>
+</div>
+
+<div class="footer-bottom">
+<div class="container">
+<div class="footer-bottom-content">
+<p>© 2026 B-SSCOS. Hak cipta terpelihara.</p>
+<div class="footer-bottom-links">
+<a href="faq.html">Bantuan</a>
+<a href="faq.html">Aduan</a>
+<a href="login.html">Akaun Pengguna</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function escapeNavbarText(value){return String(value).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#039;");}
+function kemasKiniNavbar(){
+const button=document.getElementById("loginButton");
+if(!button)return;
+if(localStorage.getItem("sscosLoggedIn")==="true"){
+const name=localStorage.getItem("studentName")||"Pengguna";
+const email=localStorage.getItem("studentEmail")||"";
+button.innerHTML='<i class="bi bi-person-check me-1"></i> '+escapeNavbarText(name);
+button.href="login.html";
+button.title=email;
+}else{
+button.innerHTML='<i class="bi bi-person-circle me-1"></i> Log Masuk / Daftar';
+button.href="login.html";
+button.removeAttribute("title");
+}
+}
+kemasKiniNavbar();
+
+// =====================================================
+// KESAN NAVBAR KETIKA SKROL
+// =====================================================
+
+const navbar = document.querySelector(".navbar");
+const backToTop = document.getElementById("backToTop");
+
+function updateScrollEffects(){
+    const scrolled = window.scrollY > 35;
+
+    if(navbar){
+        navbar.classList.toggle("navbar-scrolled", scrolled);
+    }
+
+    if(backToTop){
+        backToTop.classList.toggle("show", window.scrollY > 500);
+    }
+}
+
+window.addEventListener("scroll", updateScrollEffects, {passive:true});
+updateScrollEffects();
+
+if(backToTop){
+    backToTop.addEventListener("click", function(){
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+    });
+}
+
+
+// =====================================================
+// REVEAL ON SCROLL
+// =====================================================
+
+const revealElements = [
+    ...document.querySelectorAll(
+        ".section h2, .section .card, .notice-box, .stats-panel, .map-shell, .contact-power"
+    )
+];
+
+revealElements.forEach(function(element,index){
+    element.classList.add("reveal");
+
+    const delayClass = "reveal-delay-" + ((index % 4) + 1);
+    element.classList.add(delayClass);
+});
+
+const revealObserver = new IntersectionObserver(
+    function(entries,observer){
+        entries.forEach(function(entry){
+            if(entry.isIntersecting){
+                entry.target.classList.add("reveal-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold:.13,
+        rootMargin:"0px 0px -45px 0px"
+    }
+);
+
+revealElements.forEach(function(element){
+    revealObserver.observe(element);
+});
+
+
+// =====================================================
+// COUNTER ANIMATION
+// =====================================================
+
+const counters = document.querySelectorAll(".counter");
+
+function animateCounter(counter){
+    const target = Number(counter.dataset.target || 0);
+    const duration = 1200;
+    const startTime = performance.now();
+
+    function updateCounter(currentTime){
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+
+        counter.textContent = Math.floor(target * eased);
+
+        if(progress < 1){
+            requestAnimationFrame(updateCounter);
+        }else{
+            counter.textContent = target;
+        }
+    }
+
+    requestAnimationFrame(updateCounter);
+}
+
+const counterObserver = new IntersectionObserver(
+    function(entries,observer){
+        entries.forEach(function(entry){
+            if(entry.isIntersecting){
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    },
+    {threshold:.7}
+);
+
+counters.forEach(function(counter){
+    counterObserver.observe(counter);
+});
+
+
+// =====================================================
+// BUTTON RIPPLE
+// =====================================================
+
+document.querySelectorAll(".btn").forEach(function(button){
+    button.classList.add("ripple-btn");
+
+    button.addEventListener("click",function(event){
+        const rect = button.getBoundingClientRect();
+        const size = Math.max(rect.width,rect.height);
+        const wave = document.createElement("span");
+
+        wave.className = "ripple-wave";
+        wave.style.width = size + "px";
+        wave.style.height = size + "px";
+        wave.style.left = (event.clientX - rect.left - size / 2) + "px";
+        wave.style.top = (event.clientY - rect.top - size / 2) + "px";
+
+        button.appendChild(wave);
+
+        window.setTimeout(function(){
+            wave.remove();
+        },700);
+    });
+});
+
+
+// =====================================================
+// SUBTLE 3D CARD TILT
+// =====================================================
+
+if(window.matchMedia("(min-width: 992px)").matches &&
+   !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+
+    document.querySelectorAll(".card").forEach(function(card){
+
+        card.addEventListener("mousemove",function(event){
+            const rect = card.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            const rotateY = ((x / rect.width) - .5) * 7;
+            const rotateX = ((y / rect.height) - .5) * -7;
+
+            card.style.transform =
+                "translateY(-13px) rotateX(" +
+                rotateX +
+                "deg) rotateY(" +
+                rotateY +
+                "deg)";
+        });
+
+        card.addEventListener("mouseleave",function(){
+            card.style.transform = "";
+        });
+    });
+}
+
+
+// =====================================================
+// CURSOR GLOW
+// =====================================================
+
+const cursorGlow = document.getElementById("cursorGlow");
+
+if(cursorGlow && window.matchMedia("(pointer:fine)").matches){
+    window.addEventListener("mousemove",function(event){
+        cursorGlow.style.left = event.clientX + "px";
+        cursorGlow.style.top = event.clientY + "px";
+        cursorGlow.style.opacity = "1";
+    });
+
+    document.addEventListener("mouseleave",function(){
+        cursorGlow.style.opacity = "0";
+    });
+}
+
+</script>
+<script src="bsscos-ui.js"></script>
+<script src="bsscos-chatbot.js"></script>
+</body>
+</html>

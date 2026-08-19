@@ -1,0 +1,99 @@
+/* Shared frontend tools: language, toast and password strength */
+.bsscos-language-switch {
+    position: fixed;
+    left: 18px;
+    bottom: 18px;
+    z-index: 1090;
+    display: flex;
+    gap: 3px;
+    padding: 4px;
+    border: 1px solid rgba(148, 163, 184, .38);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 12px 30px rgba(15, 23, 42, .18);
+    backdrop-filter: blur(10px);
+}
+
+.bsscos-language-switch button {
+    border: 0;
+    border-radius: 999px;
+    padding: 7px 11px;
+    color: #475569;
+    background: transparent;
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.bsscos-language-switch button.is-active {
+    color: #fff;
+    background: #1d4ed8;
+}
+
+.bsscos-toast {
+    position: fixed;
+    left: 50%;
+    bottom: 94px;
+    z-index: 2100;
+    max-width: min(420px, calc(100vw - 28px));
+    transform: translate(-50%, 15px);
+    padding: 11px 16px;
+    border-radius: 12px;
+    color: #fff;
+    background: #0f172a;
+    box-shadow: 0 16px 35px rgba(15, 23, 42, .3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.bsscos-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+
+.bsscos-password-strength {
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 13px;
+    background: #f8fafc;
+}
+
+.bsscos-password-meter {
+    height: 7px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #e2e8f0;
+}
+
+.bsscos-password-meter span {
+    display: block;
+    width: 0;
+    height: 100%;
+    border-radius: inherit;
+    background: #dc2626;
+    transition: width .2s ease, background .2s ease;
+}
+
+.bsscos-password-rules {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #64748b;
+    font-size: .78rem;
+}
+
+.bsscos-password-rules li.is-valid { color: #15803d; font-weight: 700; }
+
+@media (max-width: 575.98px) {
+    .bsscos-language-switch { left: 10px; bottom: 12px; }
+    .bsscos-password-rules { grid-template-columns: 1fr; }
+}
+
+@media print {
+    .bsscos-language-switch,
+    .bsscos-chatbot-toggle,
+    .bsscos-chatbot-panel,
+    .back-to-top { display: none !important; }
+}

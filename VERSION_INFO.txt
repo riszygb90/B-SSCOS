@@ -1,0 +1,17 @@
+B-SSCOS FRONTEND V4 NO CART
+===========================
+
+Ini ialah pakej versi baharu. Buka index.html dari folder ini.
+
+Tanda bahawa anda membuka versi yang betul:
+1. Butang BM / EN berada di bahagian bawah kiri.
+2. Ikon troli dan ciri Add to Cart tidak lagi dipaparkan.
+3. Ikon BukhariBot biru/hijau berada di bahagian bawah kanan.
+4. Halaman Stok mempunyai T-Shirt PJ, Seluar PJ, T-Shirt Rasmi dan
+   T-Shirt Rumah Sukan.
+5. Halaman Login memaparkan indikator kekuatan ketika kata laluan ditaip.
+6. BM / EN menukar keseluruhan kandungan pada semua lima halaman, termasuk
+   teks dinamik Pesanan, Stok, FAQ, Login, troli dan BukhariBot.
+
+Jangan buka fail HTML secara berasingan daripada folder ini kerana fail
+bsscos-ui.css, bsscos-ui.js, bsscos-chatbot.css dan bsscos-chatbot.js diperlukan.
